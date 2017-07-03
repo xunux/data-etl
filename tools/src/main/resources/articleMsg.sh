@@ -1,0 +1,1 @@
+java    -classpath /home/datag/projects/data-etl/tools/tools-1.0.jar  com.haozhuo.bigdata.dataetl.tools.MyProducer dev-dataetl-articlefilter "{\"title\":\"xxx\",\"keywords\":\"xxx\",\"abstracts\":\"xxx\",\"content\":\"去找海水\",\"source\":\"xxx\",\"htmls\":\"xxx\",\"create_time\":\"2017-11-11 11:11:11\",\"crawler_time\":\"2017-11-11 11:11:11\"}"

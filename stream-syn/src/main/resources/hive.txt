@@ -1,0 +1,118 @@
+drop table user_info;
+CREATE TABLE `user_info` (
+   `user_id` string,
+   `mobile` string,
+   `sex` string,
+   `is_married` string,
+   `has_born` string,
+   `device_model` string,
+   `city` string,
+   `last_update_time` string,
+   `birthday` string,
+   `id_card_no_md5` string
+)
+PARTITIONED BY (create_date string)
+CLUSTERED BY (user_id) INTO 1 BUCKETS STORED AS ORC
+TBLPROPERTIES ("transactional"="true",
+  "compactorthreshold.hive.compactor.delta.num.threshold"="20",
+  "compactorthreshold.hive.compactor.delta.pct.threshold"="0.1"
+);
+
+
+
+drop table report_label;
+CREATE TABLE `report_label` (
+   `health_report_id` string,
+   `label` string,
+   `height` string,
+   `weight` string,
+   `waistline` string,
+   `user_id` string,
+   `id_card_no_md5` string,
+   `birthday` string,
+   `sex` string,
+   `check_unit_code` string,
+   `check_unit_name` string,
+   `check_date` string,
+   `last_update_time` string
+)
+PARTITIONED BY (create_date string)
+CLUSTERED BY (health_report_id) INTO 1 BUCKETS STORED AS ORC
+TBLPROPERTIES ("transactional"="true",
+  "compactorthreshold.hive.compactor.delta.num.threshold"="20",
+  "compactorthreshold.hive.compactor.delta.pct.threshold"="0.1"
+);
+
+
+
+drop table report_index;
+CREATE TABLE `report_index` (
+   `health_report_id` string,
+   `check_index_name` string,
+   `result_value` string,
+   `unit` string,
+   `text_ref` string,
+   `result_flag_id` string,
+   `can_explain` string,
+   `check_item_name` string,
+   `check_user_name` string
+)
+PARTITIONED BY (create_date string)
+CLUSTERED BY (health_report_id) INTO 1 BUCKETS STORED AS ORC
+TBLPROPERTIES ("transactional"="true",
+  "compactorthreshold.hive.compactor.delta.num.threshold"="20",
+  "compactorthreshold.hive.compactor.delta.pct.threshold"="0.1"
+);
+
+
+drop table report_suggest;
+CREATE TABLE `report_suggest` (
+   `health_report_id` string,
+   `summary_name` string,
+   `summary_medical_explanation` string,
+   `summary_reason_result` string,
+   `summary_advice` string,
+   `summary_description` string,
+   `review_advice` string,
+   `result` string,
+   `fw` string
+)
+PARTITIONED BY (create_date string)
+CLUSTERED BY (health_report_id) INTO 1 BUCKETS STORED AS ORC
+TBLPROPERTIES ("transactional"="true",
+  "compactor.mapreduce.map.memory.mb"="2048",
+  "compactorthreshold.hive.compactor.delta.num.threshold"="20",
+  "compactorthreshold.hive.compactor.delta.pct.threshold"="0.1"
+);
+
+drop table report_summary;
+CREATE TABLE `report_summary` (
+   `health_report_id` string,
+   `summary` string
+)
+PARTITIONED BY (create_date string)
+CLUSTERED BY (health_report_id) INTO 1 BUCKETS STORED AS ORC
+TBLPROPERTIES ("transactional"="true",
+  "compactorthreshold.hive.compactor.delta.num.threshold"="20",
+  "compactorthreshold.hive.compactor.delta.pct.threshold"="0.1"
+);
+
+drop table report;
+CREATE TABLE `report` (
+  `health_report_id` string,
+   `birthday` string,
+   `check_date` string,
+   `check_unit_code` string,
+   `check_unit_name` string,
+   `id_card_no_md5` string,
+   `last_update_time` string,
+   `report_content` string,
+   `sex` string,
+  `user_id` string
+)
+PARTITIONED BY (create_date string)
+CLUSTERED BY (health_report_id) INTO 1 BUCKETS STORED AS ORC
+TBLPROPERTIES ("transactional"="true",
+  "compactorthreshold.hive.compactor.delta.num.threshold"="20",
+  "compactorthreshold.hive.compactor.delta.pct.threshold"="0.1"
+);

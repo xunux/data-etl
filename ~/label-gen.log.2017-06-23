@@ -1,0 +1,12 @@
+17/06/23 11:56:54 INFO Props$: 加载本地目录下的配置文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/06/23 11:56:54 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.url
+17/06/23 11:56:54 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.user
+17/06/23 11:56:54 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.password
+17/06/23 11:56:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/06/23 11:56:57 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/06/23 11:56:57 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/06/23 11:57:00 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/06/23 11:57:00 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/06/23 11:57:00 WARN KafkaUtils: overriding executor group.id to spark-executor-dataetl-labelgen
+17/06/23 11:57:00 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/06/23 11:57:30 INFO StreamParseJson: no records
