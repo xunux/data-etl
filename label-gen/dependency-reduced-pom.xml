@@ -19,10 +19,6 @@
           <groupId>net.jpountz.lz4</groupId>
         </exclusion>
         <exclusion>
-          <artifactId>snappy-java</artifactId>
-          <groupId>org.xerial.snappy</groupId>
-        </exclusion>
-        <exclusion>
           <artifactId>slf4j-api</artifactId>
           <groupId>org.slf4j</groupId>
         </exclusion>
@@ -55,10 +51,6 @@
           <groupId>org.spark-project.hive</groupId>
         </exclusion>
         <exclusion>
-          <artifactId>avro</artifactId>
-          <groupId>org.apache.avro</groupId>
-        </exclusion>
-        <exclusion>
           <artifactId>avro-mapred</artifactId>
           <groupId>org.apache.avro</groupId>
         </exclusion>
@@ -73,18 +65,6 @@
         <exclusion>
           <artifactId>calcite-core</artifactId>
           <groupId>org.apache.calcite</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>httpclient</artifactId>
-          <groupId>org.apache.httpcomponents</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jackson-mapper-asl</artifactId>
-          <groupId>org.codehaus.jackson</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>commons-codec</artifactId>
-          <groupId>commons-codec</groupId>
         </exclusion>
         <exclusion>
           <artifactId>joda-time</artifactId>
@@ -269,6 +249,24 @@
         <exclusion>
           <artifactId>joda-time</artifactId>
           <groupId>joda-time</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.20</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mchange</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.5.2</version>
+      <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>mchange-commons-java</artifactId>
+          <groupId>com.mchange</groupId>
         </exclusion>
       </exclusions>
     </dependency>

@@ -10,10 +10,8 @@
     <version>1.0</version>
     <modules>
         <module>common</module>
-        <module>table-syn</module>
         <module>label-gen</module>
         <module>article-filter</module>
-        <module>stream-syn</module>
     </modules>
 
     <properties>
@@ -21,14 +19,15 @@
         <scala.version>2.11.8</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
         <spark.version>2.1.1</spark.version>
+        <hbase.version>1.2.6</hbase.version>
         <elasticsearch.version>5.4.0</elasticsearch.version>
-        <hive.version>2.1.1</hive.version>
         <kafka.version>0.10.2.0</kafka.version>
         <jackson.version>2.8.6</jackson.version>
         <hadoop.version>2.7.0</hadoop.version>
         <slf4j.version>1.7.25</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
         <ansj.version>5.1.2</ansj.version>
+        <c3p0.version>0.9.5.2</c3p0.version>
         <!--以下四个dubbo需要-->
         <dubbo.version>2.8.4.1.1</dubbo.version>
         <spring.version>4.0.1.RELEASE</spring.version>
@@ -42,8 +41,6 @@
         <maven-jar.version>2.6</maven-jar.version>
         <maven-install.version>2.5.1</maven-install.version>
         <main.scope>provided</main.scope>
-        <!--   <jackson.scope>provided</jackson.scope>-->
-
     </properties>
     <repositories>
         <repository>
@@ -68,6 +65,20 @@
     </profiles>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>${c3p0.version}</version>
+                <scope>${main.scope}</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-client -->
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>${hbase.version}</version>
+                <scope>${main.scope}</scope>
+            </dependency>
             <dependency>
                 <groupId>org.ansj</groupId>
                 <artifactId>ansj_seg</artifactId>
@@ -140,34 +151,6 @@
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>hadoop-common</artifactId>
                 <version>${hadoop.version}</version>
-                <scope>${main.scope}</scope>
-            </dependency>
-            <!-- 以下hive相关的jars在$SPARK_HOME/jars中给出，下面就不用提供了-->
-            <dependency>
-                <groupId>org.apache.hive.hcatalog</groupId>
-                <artifactId>hive-hcatalog-core</artifactId>
-                <version>${hive.version}</version>
-                <scope>${main.scope}</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.hive.hcatalog/hive-hcatalog-streaming -->
-            <dependency>
-                <groupId>org.apache.hive.hcatalog</groupId>
-                <artifactId>hive-hcatalog-streaming</artifactId>
-                <version>${hive.version}</version>
-                <scope>${main.scope}</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.hive/hive-metastore -->
-            <dependency>
-                <groupId>org.apache.hive</groupId>
-                <artifactId>hive-metastore</artifactId>
-                <version>${hive.version}</version>
-                <scope>${main.scope}</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.hive/hive-jdbc -->
-            <dependency>
-                <groupId>org.apache.hive</groupId>
-                <artifactId>hive-jdbc</artifactId>
-                <version>${hive.version}</version>
                 <scope>${main.scope}</scope>
             </dependency>
             <dependency>
@@ -304,5 +287,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>

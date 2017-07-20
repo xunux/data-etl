@@ -1,5 +1,7 @@
 package com.haozhuo.bigdata.dataetl.bean;
 
+import com.haozhuo.bigdata.dataetl.JavaUtils;
+
 import java.io.Serializable;
 
 public class User implements Serializable {
@@ -13,6 +15,7 @@ public class User implements Serializable {
     private String mobile;
     private String sex;
     private String birthday;
+    private String updateTime = JavaUtils.getStrDate();
 
     public String getUserId() {
         return userId;
@@ -92,5 +95,13 @@ public class User implements Serializable {
 
     public void setIdCardNoMd5(String idCardNoMd5) {
         this.idCardNoMd5 = idCardNoMd5;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 }

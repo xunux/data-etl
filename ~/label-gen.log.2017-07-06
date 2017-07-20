@@ -1,0 +1,10 @@
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169063 on topic-partition dev-syn-table-reportcontent-0, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169062 on topic-partition dev-syn-table-reportcontent-0, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169061 on topic-partition dev-syn-table-reportcontent-0, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169059 on topic-partition dev-syn-table-reportcontent-0, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169056 on topic-partition dev-syn-table-reportcontent-0, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169065 on topic-partition dev-syn-table-reportcontent-1, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169064 on topic-partition dev-syn-table-reportcontent-1, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169060 on topic-partition dev-syn-table-reportcontent-1, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169058 on topic-partition dev-syn-table-reportcontent-1, retrying (0 attempts left). Error: NETWORK_EXCEPTION
+17/07/06 13:27:32 WARN Sender: Got error produce response with correlation id 169057 on topic-partition dev-syn-table-reportcontent-1, retrying (0 attempts left). Error: NETWORK_EXCEPTION

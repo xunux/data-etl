@@ -1,0 +1,282 @@
+
+sqlline.py 192.168.1.150:2181
+sqlline.py datanode1:2181
+
+============= DATAETL:ARTICLE =============
+
+DROP TABLE ART;
+
+CREATE TABLE ART(
+   `id` STRING COMMENT 'information_id',
+   `fp` STRING COMMENT 'fingerprint',
+   `title` STRING COMMENT 'title',
+   `img_l` STRING COMMENT 'image_list' ,
+   `img_t` STRING COMMENT 'image_thumbnail',
+   `abs` STRING COMMENT 'abstracts',
+   `cont` STRING COMMENT 'content',
+   `src` STRING COMMENT 'source',
+   `url` STRING COMMENT 'display_url',
+   `html` STRING COMMENT 'htmls',
+   `cre_t` STRING COMMENT 'create_time',
+   `cra_t` STRING COMMENT 'crawler_time',
+   `del` STRING COMMENT 'is_delete',
+   `cmt` STRING COMMENT 'comment_range',
+   `cat` STRING COMMENT 'news_category',
+   `data_src` STRING COMMENT 'data_source',
+   `upd_t` STRING COMMENT 'spark insert or update time'
+)
+COMMENT 'article'
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,CF:fp,CF:title,CF:img_l,CF:img_t,CF:abs,CF:cont,CF:src,CF:url,CF:html,CF:cre_t,CF:cra_t,CF:del,CF:cmt,CF:cat,CF:data_src,CF:upd_t")
+TBLPROPERTIES ("hbase.table.name" = "DATAETL:ART");
+
+
+CREATE TABLE DATAETL.ART(
+   id VARCHAR PRIMARY KEY,
+   CF."fp" VARCHAR,
+   CF."title" VARCHAR,
+   CF."img_l" VARCHAR,
+   CF."img_t" VARCHAR,
+   CF."abs" VARCHAR,
+   CF."cont" VARCHAR,
+   CF."src" VARCHAR,
+   CF."url" VARCHAR,
+   CF."html" VARCHAR,
+   CF."cre_t" VARCHAR,
+   CF."cra_t" VARCHAR,
+   CF."del" VARCHAR,
+   CF."cmt" VARCHAR,
+   CF."cat" VARCHAR,
+   CF."data_src" VARCHAR,
+   CF."upd_t" VARCHAR
+);
+
+UPSERT INTO DATAETL.ART VALUES('1','2', '3','4','5','6','7','8','9','10','11','12','13','14');
+
+
+===================DATAETL:USER_INFO ==================
+
+DROP TABLE USER_INFO;
+CREATE TABLE `USER_INFO`(
+   `id` STRING COMMENT 'user_id',
+   `mobile` STRING COMMENT 'mobile',
+   `sex` STRING COMMENT 'sex',
+   `mar` STRING COMMENT 'is_married',
+   `born` STRING COMMENT 'has_born',
+   `dev` STRING COMMENT 'device_model',
+   `city` STRING COMMENT 'city',
+   `bd` STRING COMMENT 'birthday',
+   `id_card` STRING COMMENT 'id_card_no_md5',
+   `lup_t` STRING COMMENT 'last_update_time',
+   `upd_t` STRING COMMENT 'spark insert or update time'
+)
+COMMENT 'user_info'
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,CF:mobile,CF:sex,CF:mar,CF:born,CF:dev,CF:city,CF:bd,CF:id_card,CF:lup_t,CF:upd_t")
+TBLPROPERTIES ("hbase.table.name" = "DATAETL:USER_INFO");
+
+CREATE TABLE DATAETL.USER_INFO(
+   uid VARCHAR PRIMARY KEY,
+   CF."mobile" VARCHAR,
+   CF."sex" VARCHAR,
+   CF."mar" VARCHAR,
+   CF."born" VARCHAR,
+   CF."dev" VARCHAR,
+   CF."city" VARCHAR,
+   CF."bd" VARCHAR,
+   CF."id_card" VARCHAR,
+   CF."lup_t" VARCHAR,
+   CF."upd_t" VARCHAR
+);
+
+UPSERT INTO DATAETL.USER_INFO VALUES('1','2', '3','4','5','6','7','8','9','10','11');
+
+CREATE VIEW VIEW_USER_INFO AS SELECT * FROM USER_INFO
+
+==================DATAETL:RPT_LABEL=====
+标签类别（疾病、症状、基础信息，行为）
+ type
+ body_part1
+ body_part2
+ keywords
+ desc
+标签名
+标签关键词
+标签描述
+创建时间
+开发人
+
+DROP TABLE RPT_LABEL;
+CREATE TABLE DATAETL.RPT_LABEL(
+  pk STRING COMMENT 'pk',
+  rpt_id STRING COMMENT 'health_report_id',
+  uid STRING COMMENT 'user_id',
+  label STRING COMMENT 'label',
+  kw STRING COMMENT 'keywords',
+  bp1 STRING COMMENT 'body_part_1',
+  bp2 STRING COMMENT 'body_part_2',
+  desc STRING COMMENT 'describe',
+  cls STRING COMMENT 'label_class',
+  upd_t STRING COMMENT 'spark insert or update time'
+)
+COMMENT 'report_label'
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,CF:rpt_id,CF:uid,CF:label,CF:kw,CF:bp1,CF:bp2,CF:desc,CF:cls,CF:upd_t")
+TBLPROPERTIES("hbase.table.name" = "DATAETL:RPT_LABEL");
+
+
+CREATE TABLE DATAETL.RPT_LABEL(
+   pk VARCHAR PRIMARY KEY,
+   CF."rpt_id" VARCHAR,
+   CF."uid" VARCHAR,
+   CF."label" VARCHAR,
+   CF."kw" VARCHAR,
+   CF."bp1" VARCHAR,
+   CF."bp2" VARCHAR,
+   CF."desc" VARCHAR,
+   CF."cls" VARCHAR,
+   CF."upd_t" VARCHAR
+);
+
+UPSERT INTO DATAETL.RPT_LABEL VALUES('1','2', '3','4','5');
+
+============== DATAETL:RPT_IND ========
+
+DROP TABLE RPT_IND;
+CREATE  TABLE RPT_IND(
+   `pk` STRING COMMENT 'rowkey',
+   `rpt_id` STRING COMMENT 'health_report_id',
+   `chk_ind` STRING COMMENT 'check_index_name',
+   `rs_val` STRING COMMENT 'result_value',
+   `unit` STRING COMMENT 'unit',
+   `text_ref` STRING COMMENT 'text_ref',
+   `rs_flag_id` STRING COMMENT 'result_flag_id',
+   `exp` STRING COMMENT 'can_explain',
+   `chk_item` STRING COMMENT 'check_item_name',
+   `chk_user` STRING COMMENT 'check_user_name',
+   `upd_t` STRING COMMENT 'spark insert or update time'
+)
+COMMENT 'report_index'
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,CF:rpt_id,CF:chk_ind,CF:rs_val,CF:unit,CF:text_ref,CF:rs_flag_id,CF:exp,CF:chk_item,CF:chk_user,CF:upd_t")
+TBLPROPERTIES("hbase.table.name" = "DATAETL:RPT_IND");
+
+CREATE TABLE DATAETL.RPT_IND(
+   pk VARCHAR PRIMARY KEY,
+   CF."rpt_id" VARCHAR,
+   CF."chk_ind" VARCHAR,
+   CF."rs_val" VARCHAR,
+   CF."unit" VARCHAR,
+   CF."text_ref" VARCHAR,
+   CF."rs_flag_id" VARCHAR,
+   CF."exp" VARCHAR,
+   CF."chk_item" VARCHAR,
+   CF."chk_user" VARCHAR,
+   CF."upd_t" VARCHAR
+);
+UPSERT INTO DATAETL.RPT_IND VALUES('1','2', '3','4','5','6','7','8','9','10','11');
+
+
+============= DATAETL:RPT_SUG =========
+
+
+DROP TABLE RPT_SUG;
+CREATE TABLE RPT_SUG(
+   `pk` STRING COMMENT 'rowkey',
+   `rpt_id` STRING COMMENT 'health_report_id',
+   `sug_name` STRING COMMENT 'summary_name',
+   `sug_med_exp` STRING COMMENT 'summary_medical_explanation',
+   `sug_rsn_rs` STRING COMMENT 'summary_reason_result',
+   `sug_adv` STRING COMMENT 'summary_advice',
+   `sug_desc` STRING COMMENT 'summary_description',
+   `rev_adv` STRING COMMENT 'review_advice',
+   `rs` STRING COMMENT 'result',
+   `fw` STRING COMMENT 'fw',
+   `upd_t` STRING COMMENT 'spark insert or update time'
+)
+COMMENT 'report_suggest'
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,CF:rpt_id,CF:sug_name,CF:sug_med_exp,CF:sug_rsn_rs,CF:sug_adv,CF:sug_desc,CF:rev_adv,CF:rs,CF:fw,CF:upd_t")
+TBLPROPERTIES("hbase.table.name" = "DATAETL:RPT_SUG");
+
+
+CREATE TABLE DATAETL.RPT_SUG(
+   pk VARCHAR PRIMARY KEY,
+   CF."rpt_id" VARCHAR,
+   CF."sug_name" VARCHAR,
+   CF."sug_med_exp" VARCHAR,
+   CF."sug_rsn_rs" VARCHAR,
+   CF."sug_adv" VARCHAR,
+   CF."sug_desc" VARCHAR,
+   CF."rev_adv" VARCHAR,
+   CF."rs" VARCHAR,
+   CF."fw" VARCHAR,
+   CF."upd_t" VARCHAR
+);
+
+UPSERT INTO DATAETL.RPT_SUG VALUES('1','2', '3','4','5','6','7','8','9','10','11');
+
+
+
+========== DATAETL:RPT_SUM =======
+
+
+DROP TABLE RPT_SUM;
+CREATE  TABLE RPT_SUM(
+   `pk` STRING COMMENT 'rowkey',
+   `rpt_id` STRING COMMENT 'health_report_id',
+   `sum` STRING COMMENT 'summary',
+   `upd_t` STRING COMMENT 'spark insert or update time'
+)
+COMMENT 'report_summary'
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,CF:rpt_id,CF:sum,CF:upd_t")
+TBLPROPERTIES("hbase.table.name" = "DATAETL:RPT_SUM");
+
+
+CREATE TABLE DATAETL.RPT_SUM(
+   pk VARCHAR PRIMARY KEY,
+   CF."rpt_id" VARCHAR,
+   CF."sum" VARCHAR,
+   CF."upd_t" VARCHAR
+);
+UPSERT INTO DATAETL.RPT_SUM VALUES('1','2', '3','4');
+
+
+============ DATAETL:RPT ==========
+
+DROP TABLE RPT;
+CREATE  TABLE RPT(
+   `pk` STRING COMMENT 'rowkey',
+   `rpt_id` STRING COMMENT 'health_report_id',
+   `uid` STRING COMMENT 'user_id',
+   `bd` STRING COMMENT 'birthday',
+   `chk_date` STRING COMMENT 'check_date',
+   `chk_u_code` STRING COMMENT 'check_unit_code',
+   `chk_u_name` STRING COMMENT 'check_unit_name',
+   `id_card` STRING COMMENT 'id_card_no_md5',
+   `sex` STRING COMMENT 'sex',
+   `lup_t` STRING COMMENT 'last_update_time',
+   `upd_t` STRING COMMENT 'spark insert or update time',
+   `cont` STRING COMMENT 'report_content'
+)
+COMMENT 'report'
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,CF:rpt_id,CF:uid,CF:bd,CF:chk_date,CF:chk_u_code,CF:chk_u_name,CF:id_card,CF:sex,CF:lup_t,CF:upd_t,CF:cont")
+TBLPROPERTIES("hbase.table.name" = "DATAETL:RPT");
+
+CREATE TABLE DATAETL.RPT(
+   pk VARCHAR PRIMARY KEY,
+   CF."rpt_id" VARCHAR,
+   CF."uid" VARCHAR,
+   CF."bd" VARCHAR,
+   CF."chk_date" VARCHAR,
+   CF."chk_u_code" VARCHAR,
+   CF."chk_u_name" VARCHAR,
+   CF."id_card" VARCHAR,
+   CF."sex" VARCHAR,
+   CF."lup_t" VARCHAR,
+   CF."upd_t" VARCHAR,
+   CF."cont" VARCHAR
+);
+UPSERT INTO DATAETL.RPT VALUES('1','2', '3','4','5','6','7','8','9','10','11','12');

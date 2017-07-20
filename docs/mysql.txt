@@ -1,0 +1,42 @@
+CREATE TABLE `report` (
+	`health_report_id` BIGINT(20) NOT NULL,
+	`user_id` VARCHAR(50) NOT NULL,
+	`id_card_no_md5` VARCHAR(100) NULL DEFAULT NULL,
+	`birthday` DATETIME NULL DEFAULT NULL,
+	`sex` VARCHAR(3) NULL DEFAULT NULL,
+	`check_unit_code` VARCHAR(100) NULL DEFAULT NULL,
+	`check_unit_name` VARCHAR(100) NULL DEFAULT NULL,
+	`report_content` MEDIUMTEXT NOT NULL,
+	`check_date` DATETIME NULL DEFAULT NULL,
+	`last_update_time` DATETIME NULL DEFAULT NULL,
+	`upd_t` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`health_report_id`, `user_id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+
+CREATE TABLE `article` (
+	`information_id` BIGINT(20) NULL DEFAULT NULL,
+	`fingerprint` BIGINT(20) NOT NULL,
+	`title` VARCHAR(400) NULL DEFAULT NULL,
+	`image_list` LONGTEXT NULL,
+	`image_thumbnail` VARCHAR(255) NULL DEFAULT NULL,
+	`abstracts` TEXT NULL,
+	`content` MEDIUMTEXT NOT NULL,
+	`source` VARCHAR(400) NULL DEFAULT NULL,
+	`display_url` VARCHAR(400) NULL DEFAULT NULL,
+	`htmls` MEDIUMTEXT NULL,
+	`create_time` DATETIME NULL DEFAULT NULL,
+	`crawler_time` DATETIME NULL DEFAULT NULL,
+	`is_delete` TINYINT(4) NULL DEFAULT '0',
+	`comment_range` INT(11) NULL DEFAULT '0',
+	`news_category` VARCHAR(200) NULL DEFAULT NULL,
+	`data_source` VARCHAR(200) NULL DEFAULT NULL,
+	`upd_t` DATETIME NULL DEFAULT NULL,
+	UNIQUE INDEX `Index 2` (`fingerprint`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+

@@ -1,3 +1,4 @@
+/*
 package com.haozhuo.bigdata.dataetl.articlefilter.dubbo;
 
 //import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -5,18 +6,21 @@ package com.haozhuo.bigdata.dataetl.articlefilter.dubbo;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ReferenceConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
-import com.haozhuo.bigdata.dataetl.Props;
 import com.haozhuo.common.sys.util.DateUtil;
-import com.haozhuo.info.dubbo.InfoModuleService;
-import com.haozhuo.info.entity.vo.param.InformationBigDataParam;
+*/
+/*import com.haozhuo.info.dubbo.InfoModuleService;
+import com.haozhuo.info.entity.vo.param*//*
+.InformationBigDataParam;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+*/
 /**
  * Created by LingXin on 6/19/17.
- */
+ *//*
+
 public class ProviderMain {
     public static void main(String[] args) {
         ApplicationConfig application =  new ApplicationConfig();
@@ -57,6 +61,7 @@ public class ProviderMain {
         Map<Long,Integer> a = ims.addInformationByBigData(list);
         System.out.println(a);
     }
+*/
 /*    public static void main(String[] args) {
         try {
             ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "classpath:spring-beans.xml" });
@@ -67,5 +72,7 @@ public class ProviderMain {
             e.printStackTrace();
         }
 
-    }*/
+    }*//*
+
 }
+*/

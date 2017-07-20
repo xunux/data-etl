@@ -1,0 +1,129 @@
+drop table article;
+CREATE TABLE `article`(
+   `information_id` string,
+   `fingerprint` string,
+   `title` string,
+   `image_list` string,
+   `image_thumbnail` string,
+   `abstracts` string,
+   `content` string,
+   `source` string,
+   `display_url` string,
+   `htmls` string,
+   `create_time` string,
+   `crawler_time` string,
+   `is_delete` string
+)
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,cf:fingerprint,cf:title,cf:image_list,cf:image_thumbnail,cf:abstracts,cf:content,cf:source,cf:display_url,cf:htmls,cf:create_time,cf:crawler_time,cf:is_delete")
+TBLPROPERTIES ("hbase.table.name" = "dataetl:article");
+
+
+
+
+drop table user_info;
+CREATE TABLE `user_info`(
+   `user_id` string,
+   `mobile` string,
+   `sex` string,
+   `is_married` string,
+   `has_born` string,
+   `device_model` string,
+   `city` string,
+   `last_update_time` string,
+   `birthday` string,
+   `id_card_no_md5` string
+)
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,cf:mobile,cf:sex,cf:is_married,cf:has_born,cf:device_model,cf:city,cf:last_update_time,cf:birthday,cf:id_card_no_md5")
+TBLPROPERTIES ("hbase.table.name" = "dataetl:user_info");
+
+
+
+drop table report_label;
+CREATE  TABLE report_label(
+  key string,
+  health_report_id string,
+  user_id string,
+  label string,
+  source string,
+  first_class string,
+  second_class string,
+  keywords string,
+  describes string,
+  label_create_time string
+)
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,cf:health_report_id,cf:user_id,cf:label,cf:source,cf:first_class,cf:second_class,cf:keywords,cf:describes,cf:label_create_time")
+TBLPROPERTIES("hbase.table.name" = "dataetl:report_label");
+
+
+
+drop table report_index;
+CREATE  TABLE report_index(
+   `key` string,
+   `health_report_id` string,
+   `check_index_name` string,
+   `result_value` string,
+   `unit` string,
+   `text_ref` string,
+   `result_flag_id` string,
+   `can_explain` string,
+   `check_item_name` string,
+   `check_user_name` string
+)
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,cf:health_report_id,cf:check_index_name,cf:result_value,cf:unit,cf:text_ref,cf:result_flag_id,cf:can_explain,cf:check_item_name,cf:check_user_name")
+TBLPROPERTIES("hbase.table.name" = "dataetl:report_index");
+
+
+
+drop table report_suggest;
+CREATE  TABLE report_suggest(
+   `key` string,
+   `health_report_id` string,
+   `summary_name` string,
+   `summary_medical_explanation` string,
+   `summary_reason_result` string,
+   `summary_advice` string,
+   `summary_description` string,
+   `review_advice` string,
+   `result` string,
+   `fw` string
+)
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,cf:health_report_id,cf:summary_name,cf:summary_medical_explanation,cf:summary_reason_result,cf:summary_advice,cf:summary_description,cf:review_advice,cf:result,cf:fw")
+TBLPROPERTIES("hbase.table.name" = "dataetl:report_suggest");
+
+
+
+drop table report_summary;
+CREATE  TABLE report_summary(
+   `key` string,
+   `health_report_id` string,
+   `summary` string
+)
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,cf:health_report_id,cf:summary")
+TBLPROPERTIES("hbase.table.name" = "DATAETL:REPORT_SUMMARY");
+
+insert into report_summary(`key` ,`health_report_id` ,`summary` ) values ("11","22","33")
+
+
+drop table report;
+CREATE  TABLE report(
+   `key` string,
+   `health_report_id` string,
+   `user_id` string,
+   `birthday` string,
+   `check_date` string,
+   `check_unit_code` string,
+   `check_unit_name` string,
+   `id_card_no_md5` string,
+   `last_update_time` string,
+   `report_content` string,
+   `sex` string
+)
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping"=":key,cf:health_report_id,cf:user_id,cf:birthday,cf:check_date,cf:check_unit_code,cf:check_unit_name,cf:id_card_no_md5,cf:last_update_time,cf:report_content,cf:sex")
+TBLPROPERTIES("hbase.table.name" = "dataetl:report");

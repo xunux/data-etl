@@ -1,0 +1,106 @@
+17/07/05 10:36:55 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/05 10:36:55 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.url
+17/07/05 10:36:55 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.user
+17/07/05 10:36:55 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.password
+17/07/05 10:36:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/05 10:37:00 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/05 10:37:00 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/05 10:37:03 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/05 10:37:03 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/05 10:37:03 WARN KafkaUtils: overriding executor group.id to spark-executor-dataetl-labelgen
+17/07/05 10:37:03 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/05 10:37:32 INFO StreamParseJson: has records
+17/07/05 10:38:00 INFO StreamParseJson: no records
+17/07/05 10:38:30 INFO StreamParseJson: no records
+17/07/05 10:39:00 INFO StreamParseJson: no records
+17/07/05 10:39:30 INFO StreamParseJson: no records
+17/07/05 10:40:00 INFO StreamParseJson: no records
+17/07/05 10:40:30 INFO StreamParseJson: no records
+17/07/05 10:43:54 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/05 10:43:54 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.url
+17/07/05 10:43:54 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.user
+17/07/05 10:43:54 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.password
+17/07/05 10:43:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/05 10:43:58 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/05 10:43:58 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/05 10:55:57 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/05 10:55:57 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.url
+17/07/05 10:55:57 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.user
+17/07/05 10:55:57 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.password
+17/07/05 10:56:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/05 10:56:01 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/05 10:56:01 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/05 10:56:05 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/05 10:56:05 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/05 10:56:05 WARN KafkaUtils: overriding executor group.id to spark-executor-dataetl-labelgen
+17/07/05 10:56:05 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/05 10:56:31 INFO StreamParseJson: has records
+17/07/05 10:56:44 WARN BlockManager: Block rdd_6_0 already exists on this machine; not re-adding it
+17/07/05 10:57:00 INFO StreamParseJson: no records
+17/07/05 10:57:30 INFO StreamParseJson: no records
+17/07/05 11:05:05 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/05 11:05:05 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.url
+17/07/05 11:05:05 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.user
+17/07/05 11:05:05 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.password
+17/07/05 11:05:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/05 11:05:08 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/05 11:05:08 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/05 11:05:12 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/05 11:05:12 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/05 11:05:12 WARN KafkaUtils: overriding executor group.id to spark-executor-dataetl-labelgen
+17/07/05 11:05:12 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/05 11:05:31 INFO StreamParseJson: has records
+17/07/05 11:05:38 INFO ParseReport: 将解析完的报告存入ES中
+17/07/05 11:05:42 INFO ParseReport: 将labels保存到Hive中
+17/07/05 11:05:49 INFO ParseReport: 将index保存到Hive
+17/07/05 11:05:51 INFO ParseReport: 将summary保存到Hive中
+17/07/05 11:05:52 INFO ParseReport: 将suggests保存到Hive
+17/07/05 11:06:00 INFO StreamParseJson: no records
+17/07/05 11:06:30 INFO StreamParseJson: no records
+17/07/05 11:07:00 INFO StreamParseJson: no records
+17/07/05 11:07:30 INFO StreamParseJson: no records
+17/07/05 11:07:58 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/05 11:07:58 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.url
+17/07/05 11:07:58 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.user
+17/07/05 11:07:58 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.password
+17/07/05 11:08:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/05 11:08:01 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/05 11:08:01 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/05 11:08:04 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/05 11:08:04 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/05 11:08:04 WARN KafkaUtils: overriding executor group.id to spark-executor-dataetl-labelgen
+17/07/05 11:08:04 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/05 11:08:30 INFO StreamParseJson: has records
+17/07/05 11:08:39 INFO ParseReport: 将解析完的报告存入ES中
+17/07/05 11:08:44 INFO ParseReport: 将labels保存到Hive中
+17/07/05 11:08:52 INFO ParseReport: 将index保存到Hive
+17/07/05 11:08:53 INFO ParseReport: 将summary保存到Hive中
+17/07/05 11:08:55 INFO ParseReport: 将suggests保存到Hive
+17/07/05 11:09:00 INFO StreamParseJson: no records
+17/07/05 11:09:30 INFO StreamParseJson: no records
+17/07/05 11:10:00 INFO StreamParseJson: no records
+17/07/05 11:10:30 INFO StreamParseJson: no records
+17/07/05 11:11:00 INFO StreamParseJson: no records
+17/07/05 11:11:30 INFO StreamParseJson: no records
+17/07/05 11:12:00 INFO StreamParseJson: no records
+17/07/05 11:12:30 INFO StreamParseJson: no records
+17/07/05 11:13:00 INFO StreamParseJson: no records
+17/07/05 11:13:30 INFO StreamParseJson: no records
+17/07/05 11:14:00 INFO StreamParseJson: no records
+17/07/05 11:14:30 INFO StreamParseJson: no records
+17/07/05 11:15:00 INFO StreamParseJson: no records
+17/07/05 11:15:30 INFO StreamParseJson: no records
+17/07/05 11:16:00 INFO StreamParseJson: no records
+17/07/05 11:16:30 INFO StreamParseJson: no records
+17/07/05 11:17:00 INFO StreamParseJson: no records
+17/07/05 11:17:30 INFO StreamParseJson: no records
+17/07/05 11:18:00 INFO StreamParseJson: no records
+17/07/05 11:18:30 INFO StreamParseJson: no records
+17/07/05 11:19:00 INFO StreamParseJson: no records
+17/07/05 11:19:30 INFO StreamParseJson: no records
+17/07/05 11:20:00 INFO StreamParseJson: no records
+17/07/05 11:20:30 INFO StreamParseJson: no records
+17/07/05 11:21:00 INFO StreamParseJson: no records
+17/07/05 11:21:30 INFO StreamParseJson: no records
+17/07/05 11:22:00 INFO StreamParseJson: no records
+17/07/05 11:22:30 INFO StreamParseJson: no records

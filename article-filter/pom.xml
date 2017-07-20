@@ -11,27 +11,21 @@
     <artifactId>article-filter</artifactId>
     <packaging>jar</packaging>
     <properties>
-        <dubbo.scope>provided</dubbo.scope>
+        <article-filter.scope>provided</article-filter.scope>
     </properties>
 
     <dependencies>
-         <dependency>
-              <groupId>com.ihaozhuo</groupId>
-              <artifactId>haozhuo-info-api</artifactId>
-              <version>0.0.1</version>
-              <scope>${dubbo.scope}</scope>
-          </dependency>
-         <dependency>
-              <groupId>com.ihaozhuo</groupId>
-              <artifactId>haozhuo-common</artifactId>
-              <version>3.5.2</version>
-              <scope>${dubbo.scope}</scope>
-          </dependency>
-          <dependency>
-              <groupId>com.haozhuo.bigdata</groupId>
-              <artifactId>common</artifactId>
-              <version>${project.parent.version}</version>
-          </dependency>
+        <dependency>
+            <groupId>com.ihaozhuo</groupId>
+            <artifactId>haozhuo-common</artifactId>
+            <version>3.5.2</version>
+            <scope>${article-filter.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.haozhuo.bigdata</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
@@ -60,17 +54,38 @@
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch-spark-20_${scala.binary.version}</artifactId>
         </dependency>
+
+        <!--ES依赖的jar包较多，并且这些依赖spark中没有提供，所以将ES的依赖打进去-->
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!--org.elasticsearch.client需要依赖以下org.apache.logging.log4j的log4j-api和log4j-core，这两个包要自己引入-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <scope>${article-filter.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <scope>${article-filter.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <scope>${article-filter.scope}</scope>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
+            <scope>${article-filter.scope}</scope>
         </dependency>
 
         <!--  为了提供dubbo服务引入以下一系列包 -->
@@ -78,7 +93,7 @@
             <groupId>fakepath</groupId>
             <artifactId>dubbo</artifactId>
             <version>${dubbo.version}</version>
-            <scope>${dubbo.scope}</scope>
+            <scope>${article-filter.scope}</scope>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework</groupId>
@@ -94,7 +109,7 @@
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
             <version>${zookeeper.version}</version>
-            <scope>${dubbo.scope}</scope>
+            <scope>${article-filter.scope}</scope>
             <exclusions>
                 <exclusion>
                     <artifactId>junit</artifactId>
@@ -110,7 +125,7 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
             <version>${zkclient.version}</version>
-            <scope>${dubbo.scope}</scope>
+            <scope>${article-filter.scope}</scope>
             <exclusions>
                 <exclusion>
                     <groupId>junit</groupId>
@@ -130,25 +145,45 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
-            <scope>${dubbo.scope}</scope>
+            <scope>${article-filter.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
-            <scope>${dubbo.scope}</scope>
+            <scope>${article-filter.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
             <version>${spring.version}</version>
-            <scope>${dubbo.scope}</scope>
+            <scope>${article-filter.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
             <version>${spring.version}</version>
-            <scope>${dubbo.scope}</scope>
+            <scope>${article-filter.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <scope>${article-filter.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.hadoop</groupId>
+                    <artifactId>hadoop-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.hadoop</groupId>
+                    <artifactId>hadoop-yarn-common</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

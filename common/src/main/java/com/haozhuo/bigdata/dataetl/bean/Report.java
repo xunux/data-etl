@@ -1,6 +1,7 @@
 package com.haozhuo.bigdata.dataetl.bean;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.haozhuo.bigdata.dataetl.JavaUtils;
 
 import java.io.Serializable;
 
@@ -26,6 +27,8 @@ public class Report implements Serializable {
     private String checkDate;
     @JsonProperty("lastUpdateTime")
     private String lastUpdateTime;
+    @JsonProperty("updateTime")
+    private String updateTime;
 
     public String getIdCardNoMd5() {
         return idCardNoMd5;
@@ -106,5 +109,13 @@ public class Report implements Serializable {
 
     public void setLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 }

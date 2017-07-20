@@ -1,17 +1,1 @@
-The Spark RDD API also exposes asynchronous versions of some actions, like foreachAsync for foreach, which immediately return a FutureAction to the caller instead of blocking on completion of the action. This can be used to manage or wait for the asynchronous execution of the action.
-
-Shuffle operations
-Certain operations within Spark trigger an event known as the shuffle. The shuffle is Spark’s mechanism for re-distributing data so that it’s grouped differently across partitions. This typically involves copying data across executors and machines, making the shuffle a complex and costly operation.
-
-Background
-
-To understand what happens during the shuffle we can consider the example of the reduceByKey operation. The reduceByKey operation generates a new RDD where all values for a single key are combined into a tuple - the key and the result of executing a reduce function against all values associated with that key. The challenge is that not all values for a single key necessarily reside on the same partition, or even the same machine, but they must be co-located to compute the result.
-
-In Spark, data is generally not distributed across partitions to be in the necessary place for a specific operation. During computations, a single task will operate on a single partition - thus, to organize all the data for a single reduceByKey reduce task to execute, Spark needs to perform an all-to-all operation. It must read from all partitions to find all the values for all keys, and then bring together values across partitions to compute the final result for each key - this is called the shuffle.
-
-Although the set of elements in each partition of newly shuffled data will be deterministic, and so is the ordering of partitions themselves, the ordering of these elements is not. If one desires predictably ordered data following shuffle then it’s possible to use:
-
-mapPartitions to sort each partition using, for example, .sorted
-repartitionAndSortWithinPartitions to efficiently sort partitions while simultaneously repartitioning
-sortBy to make a globally ordered RDD
-Operations which can cause a shuffle include repartition operations like repartition and coalesce, ‘ByKey o
+据半岛电视台网站7月3日报道，大约1年前，联合国在南苏丹西北部城市瓦乌建立基地，随着战事蔓延，成全上万的居民逃往联合国基地避难。据联合国称，目前已经有大约3.9万人在营地周围安家，在周围的铁丝网和维和人员的守护下，他们才得到一丝安全感。编译/余诗泉（参考消息网独家编译，转载请注明出处）

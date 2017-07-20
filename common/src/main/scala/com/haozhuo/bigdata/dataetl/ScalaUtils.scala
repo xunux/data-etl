@@ -1,10 +1,7 @@
 package com.haozhuo.bigdata.dataetl
 
 import java.io.{FileInputStream, InputStream}
-
 import org.slf4j.LoggerFactory
-
-
 object ScalaUtils {
   val logger = LoggerFactory.getLogger(getClass())
   def readFile(path: String): InputStream = {

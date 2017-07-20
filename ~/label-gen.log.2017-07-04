@@ -1,0 +1,321 @@
+17/07/04 09:59:48 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/04 09:59:48 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.url
+17/07/04 09:59:48 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.user
+17/07/04 09:59:48 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.password
+17/07/04 09:59:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/04 09:59:52 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/04 09:59:52 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/04 09:59:56 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/04 09:59:56 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/04 09:59:56 WARN KafkaUtils: overriding executor group.id to spark-executor-dataetl-labelgen
+17/07/04 09:59:56 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/04 10:00:01 INFO StreamParseJson: no records
+17/07/04 10:00:30 INFO StreamParseJson: no records
+17/07/04 10:01:00 INFO StreamParseJson: no records
+17/07/04 10:01:30 INFO StreamParseJson: no records
+17/07/04 10:02:00 INFO StreamParseJson: no records
+17/07/04 10:02:30 INFO StreamParseJson: no records
+17/07/04 10:03:00 INFO StreamParseJson: no records
+17/07/04 10:03:30 INFO StreamParseJson: has records
+17/07/04 10:03:33 ERROR StreamParseJson: 解析报告出错了
+org.apache.spark.sql.AnalysisException: No such struct field idCardNoMd5 in birthday, checkDate, checkUnitCode, checkUnitName, healthReportId, lastUpdateTime, reportContent, sex, userId;
+	at org.apache.spark.sql.catalyst.expressions.ExtractValue$.findField(complexTypeExtractors.scala:85)
+	at org.apache.spark.sql.catalyst.expressions.ExtractValue$.apply(complexTypeExtractors.scala:53)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$3.apply(LogicalPlan.scala:253)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$3.apply(LogicalPlan.scala:252)
+	at scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:124)
+	at scala.collection.immutable.List.foldLeft(List.scala:84)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolve(LogicalPlan.scala:252)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveChildren(LogicalPlan.scala:148)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9$$anonfun$applyOrElse$5$$anonfun$35.apply(Analyzer.scala:613)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9$$anonfun$applyOrElse$5$$anonfun$35.apply(Analyzer.scala:613)
+	at org.apache.spark.sql.catalyst.analysis.package$.withPosition(package.scala:48)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9$$anonfun$applyOrElse$5.applyOrElse(Analyzer.scala:613)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9$$anonfun$applyOrElse$5.applyOrElse(Analyzer.scala:609)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformUp$1.apply(TreeNode.scala:290)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformUp$1.apply(TreeNode.scala:290)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:289)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:307)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:188)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:305)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsUp$1.apply(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsUp$1.apply(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:266)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1(QueryPlan.scala:276)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1$1.apply(QueryPlan.scala:280)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1(QueryPlan.scala:280)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$6.apply(QueryPlan.scala:285)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:188)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:285)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpressionsUp(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9.applyOrElse(Analyzer.scala:609)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9.applyOrElse(Analyzer.scala:551)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$resolveOperators$1.apply(LogicalPlan.scala:61)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$resolveOperators$1.apply(LogicalPlan.scala:61)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperators(LogicalPlan.scala:60)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$.apply(Analyzer.scala:551)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$.apply(Analyzer.scala:488)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1$$anonfun$apply$1.apply(RuleExecutor.scala:85)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1$$anonfun$apply$1.apply(RuleExecutor.scala:82)
+	at scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:124)
+	at scala.collection.immutable.List.foldLeft(List.scala:84)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1.apply(RuleExecutor.scala:82)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1.apply(RuleExecutor.scala:74)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:74)
+	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:69)
+	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:67)
+	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:50)
+	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:63)
+	at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$withPlan(Dataset.scala:2845)
+	at org.apache.spark.sql.Dataset.select(Dataset.scala:1131)
+	at org.apache.spark.sql.Dataset.select(Dataset.scala:1149)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.StreamParseJson$$anonfun$run$2.apply(StreamParseJson.scala:41)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.StreamParseJson$$anonfun$run$2.apply(StreamParseJson.scala:31)
+	at org.apache.spark.streaming.dstream.DStream$$anonfun$foreachRDD$1$$anonfun$apply$mcV$sp$3.apply(DStream.scala:627)
+	at org.apache.spark.streaming.dstream.DStream$$anonfun$foreachRDD$1$$anonfun$apply$mcV$sp$3.apply(DStream.scala:627)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.DStream.createRDDWithLocalProperties(DStream.scala:415)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply$mcV$sp(ForEachDStream.scala:50)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply(ForEachDStream.scala:50)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply(ForEachDStream.scala:50)
+	at scala.util.Try$.apply(Try.scala:192)
+	at org.apache.spark.streaming.scheduler.Job.run(Job.scala:39)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply$mcV$sp(JobScheduler.scala:256)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply(JobScheduler.scala:256)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply(JobScheduler.scala:256)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler.run(JobScheduler.scala:255)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+17/07/04 10:04:00 INFO StreamParseJson: no records
+17/07/04 10:04:30 INFO StreamParseJson: no records
+17/07/04 10:05:00 INFO StreamParseJson: no records
+17/07/04 10:05:30 INFO StreamParseJson: no records
+17/07/04 10:06:00 INFO StreamParseJson: no records
+17/07/04 10:06:30 INFO StreamParseJson: no records
+17/07/04 10:07:00 INFO StreamParseJson: no records
+17/07/04 10:07:30 INFO StreamParseJson: no records
+17/07/04 10:08:00 INFO StreamParseJson: no records
+17/07/04 10:08:30 INFO StreamParseJson: no records
+17/07/04 10:09:00 INFO StreamParseJson: no records
+17/07/04 10:09:30 INFO StreamParseJson: no records
+17/07/04 10:10:00 INFO StreamParseJson: no records
+17/07/04 10:10:30 INFO StreamParseJson: no records
+17/07/04 10:11:00 INFO StreamParseJson: no records
+17/07/04 10:11:30 INFO StreamParseJson: no records
+17/07/04 10:12:00 INFO StreamParseJson: no records
+17/07/04 10:12:30 INFO StreamParseJson: no records
+17/07/04 10:13:01 INFO StreamParseJson: no records
+17/07/04 10:13:30 WARN ConsumerCoordinator: Auto-commit of offsets {dev-syn-table-reportcontent-0=OffsetAndMetadata{offset=21691, metadata=''}, dev-syn-table-reportcontent-1=OffsetAndMetadata{offset=21699, metadata=''}} failed for group dataetl-labelgen: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+17/07/04 10:13:40 INFO StreamParseJson: no records
+17/07/04 10:14:00 WARN ConsumerCoordinator: Auto-commit of offsets {dev-syn-table-reportcontent-0=OffsetAndMetadata{offset=21691, metadata=''}, dev-syn-table-reportcontent-1=OffsetAndMetadata{offset=21699, metadata=''}} failed for group dataetl-labelgen: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+17/07/04 10:14:00 INFO StreamParseJson: has records
+17/07/04 10:14:30 INFO StreamParseJson: no records
+17/07/04 10:15:00 INFO StreamParseJson: has records
+17/07/04 10:15:30 INFO StreamParseJson: no records
+17/07/04 10:16:00 INFO StreamParseJson: no records
+17/07/04 10:16:30 INFO StreamParseJson: no records
+17/07/04 10:17:00 INFO StreamParseJson: no records
+17/07/04 10:17:30 INFO StreamParseJson: no records
+17/07/04 10:18:00 INFO StreamParseJson: no records
+17/07/04 10:18:30 INFO StreamParseJson: no records
+17/07/04 10:19:00 INFO StreamParseJson: has records
+17/07/04 10:19:01 ERROR StreamParseJson: 解析报告出错了
+org.apache.spark.sql.AnalysisException: No such struct field idCardNoMd5 in birthday, checkDate, checkUnitCode, checkUnitName, healthReportId, lastUpdateTime, reportContent, sex, userId;
+	at org.apache.spark.sql.catalyst.expressions.ExtractValue$.findField(complexTypeExtractors.scala:85)
+	at org.apache.spark.sql.catalyst.expressions.ExtractValue$.apply(complexTypeExtractors.scala:53)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$3.apply(LogicalPlan.scala:253)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$3.apply(LogicalPlan.scala:252)
+	at scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:124)
+	at scala.collection.immutable.List.foldLeft(List.scala:84)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolve(LogicalPlan.scala:252)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveChildren(LogicalPlan.scala:148)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9$$anonfun$applyOrElse$5$$anonfun$35.apply(Analyzer.scala:613)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9$$anonfun$applyOrElse$5$$anonfun$35.apply(Analyzer.scala:613)
+	at org.apache.spark.sql.catalyst.analysis.package$.withPosition(package.scala:48)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9$$anonfun$applyOrElse$5.applyOrElse(Analyzer.scala:613)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9$$anonfun$applyOrElse$5.applyOrElse(Analyzer.scala:609)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformUp$1.apply(TreeNode.scala:290)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformUp$1.apply(TreeNode.scala:290)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:289)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:307)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:188)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:305)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsUp$1.apply(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsUp$1.apply(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:266)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1(QueryPlan.scala:276)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1$1.apply(QueryPlan.scala:280)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1(QueryPlan.scala:280)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$6.apply(QueryPlan.scala:285)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:188)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:285)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpressionsUp(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9.applyOrElse(Analyzer.scala:609)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$$anonfun$apply$9.applyOrElse(Analyzer.scala:551)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$resolveOperators$1.apply(LogicalPlan.scala:61)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$resolveOperators$1.apply(LogicalPlan.scala:61)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperators(LogicalPlan.scala:60)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$.apply(Analyzer.scala:551)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences$.apply(Analyzer.scala:488)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1$$anonfun$apply$1.apply(RuleExecutor.scala:85)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1$$anonfun$apply$1.apply(RuleExecutor.scala:82)
+	at scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:124)
+	at scala.collection.immutable.List.foldLeft(List.scala:84)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1.apply(RuleExecutor.scala:82)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1.apply(RuleExecutor.scala:74)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:74)
+	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:69)
+	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:67)
+	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:50)
+	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:63)
+	at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$withPlan(Dataset.scala:2845)
+	at org.apache.spark.sql.Dataset.select(Dataset.scala:1131)
+	at org.apache.spark.sql.Dataset.select(Dataset.scala:1149)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.StreamParseJson$$anonfun$run$2.apply(StreamParseJson.scala:41)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.StreamParseJson$$anonfun$run$2.apply(StreamParseJson.scala:31)
+	at org.apache.spark.streaming.dstream.DStream$$anonfun$foreachRDD$1$$anonfun$apply$mcV$sp$3.apply(DStream.scala:627)
+	at org.apache.spark.streaming.dstream.DStream$$anonfun$foreachRDD$1$$anonfun$apply$mcV$sp$3.apply(DStream.scala:627)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.DStream.createRDDWithLocalProperties(DStream.scala:415)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply$mcV$sp(ForEachDStream.scala:50)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply(ForEachDStream.scala:50)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply(ForEachDStream.scala:50)
+	at scala.util.Try$.apply(Try.scala:192)
+	at org.apache.spark.streaming.scheduler.Job.run(Job.scala:39)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply$mcV$sp(JobScheduler.scala:256)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply(JobScheduler.scala:256)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply(JobScheduler.scala:256)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler.run(JobScheduler.scala:255)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+17/07/04 10:19:30 INFO StreamParseJson: no records
+17/07/04 10:20:00 INFO StreamParseJson: no records
+17/07/04 10:20:30 INFO StreamParseJson: has records
+17/07/04 10:20:31 ERROR StreamParseJson: 解析报告出错了
+org.apache.spark.sql.AnalysisException: cannot resolve '`eventType`' given input columns: [_corrupt_record];;
+'Filter ((upper('eventType) = INSERT) && (upper('table) = REPORT))
++- LogicalRDD [_corrupt_record#102]
+
+	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)
+	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$apply$2.applyOrElse(CheckAnalysis.scala:86)
+	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$apply$2.applyOrElse(CheckAnalysis.scala:83)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformUp$1.apply(TreeNode.scala:290)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformUp$1.apply(TreeNode.scala:290)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:289)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:307)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:188)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:305)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:307)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:188)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:305)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:307)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:188)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:305)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:287)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsUp$1.apply(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsUp$1.apply(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:266)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1(QueryPlan.scala:276)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$6.apply(QueryPlan.scala:285)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:188)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:285)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpressionsUp(QueryPlan.scala:255)
+	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:83)
+	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:128)
+	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$class.checkAnalysis(CheckAnalysis.scala:76)
+	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:57)
+	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:52)
+	at org.apache.spark.sql.Dataset.<init>(Dataset.scala:161)
+	at org.apache.spark.sql.Dataset.<init>(Dataset.scala:167)
+	at org.apache.spark.sql.Dataset$.apply(Dataset.scala:58)
+	at org.apache.spark.sql.Dataset.withTypedPlan(Dataset.scala:2850)
+	at org.apache.spark.sql.Dataset.filter(Dataset.scala:1282)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.StreamParseJson$$anonfun$run$2.apply(StreamParseJson.scala:40)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.StreamParseJson$$anonfun$run$2.apply(StreamParseJson.scala:31)
+	at org.apache.spark.streaming.dstream.DStream$$anonfun$foreachRDD$1$$anonfun$apply$mcV$sp$3.apply(DStream.scala:627)
+	at org.apache.spark.streaming.dstream.DStream$$anonfun$foreachRDD$1$$anonfun$apply$mcV$sp$3.apply(DStream.scala:627)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.DStream.createRDDWithLocalProperties(DStream.scala:415)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply$mcV$sp(ForEachDStream.scala:50)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply(ForEachDStream.scala:50)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply(ForEachDStream.scala:50)
+	at scala.util.Try$.apply(Try.scala:192)
+	at org.apache.spark.streaming.scheduler.Job.run(Job.scala:39)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply$mcV$sp(JobScheduler.scala:256)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply(JobScheduler.scala:256)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply(JobScheduler.scala:256)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler.run(JobScheduler.scala:255)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+17/07/04 10:21:00 INFO StreamParseJson: no records
+17/07/04 10:21:30 INFO StreamParseJson: has records
+17/07/04 10:22:00 INFO StreamParseJson: no records
+17/07/04 10:22:30 INFO StreamParseJson: no records
+17/07/04 10:23:00 INFO StreamParseJson: no records
+17/07/04 10:23:30 INFO StreamParseJson: has records
+17/07/04 10:24:00 INFO StreamParseJson: no records
+17/07/04 10:24:29 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/04 10:24:29 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.url
+17/07/04 10:24:29 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.user
+17/07/04 10:24:29 WARN Props$: config.properties文件中沒有这个属性:mysql.connection.password
+17/07/04 10:24:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/04 10:24:32 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/04 10:24:32 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/04 10:24:35 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/04 10:24:35 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/04 10:24:35 WARN KafkaUtils: overriding executor group.id to spark-executor-dataetl-labelgen
+17/07/04 10:24:35 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/04 10:25:01 INFO StreamParseJson: has records
+17/07/04 10:25:08 INFO ParseReport: 将解析完的报告存入ES中
+17/07/04 10:25:12 INFO ParseReport: 将labels保存到Hive中
+17/07/04 10:25:21 INFO ParseReport: 将index保存到Hive
+17/07/04 10:25:23 INFO ParseReport: 将summary保存到Hive中
+17/07/04 10:25:25 INFO ParseReport: 将suggests保存到Hive
+17/07/04 10:25:27 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/07/04 10:25:30 INFO StreamParseJson: no records

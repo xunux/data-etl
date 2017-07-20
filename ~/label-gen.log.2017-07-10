@@ -1,0 +1,150 @@
+17/07/10 10:02:34 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/10 10:02:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/10 10:02:38 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/10 10:02:38 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/10 10:02:47 INFO StreamParseJson: topic:dev-syn-table-reportcontent2
+17/07/10 10:02:47 INFO StreamParseJson: groupId:labelgen
+17/07/10 10:02:47 INFO StreamParseJson: fromOffsets:Map()
+17/07/10 10:02:47 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/10 10:02:47 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/10 10:02:47 WARN KafkaUtils: overriding executor group.id to spark-executor-labelgen
+17/07/10 10:02:47 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/10 10:03:06 INFO StreamParseJson: no records
+17/07/10 10:03:06 INFO StreamParseJson: 第1批次完成
+17/07/10 15:51:46 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/10 15:51:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/10 15:51:51 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/10 15:51:51 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/10 15:52:03 INFO StreamParseJson: topic:dev-syn-table-reportcontent2
+17/07/10 15:52:03 INFO StreamParseJson: groupId:labelgen
+17/07/10 15:52:03 INFO StreamParseJson: offsets:Map()
+17/07/10 15:52:04 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/10 15:52:04 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/10 15:52:04 WARN KafkaUtils: overriding executor group.id to spark-executor-labelgen
+17/07/10 15:52:04 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/10 15:52:30 INFO StreamParseJson: no records
+17/07/10 15:52:30 INFO StreamParseJson: 第1批次完成
+17/07/10 15:53:00 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/10 15:53:03 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/10 15:53:04 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/10 15:53:04 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/10 15:53:13 INFO StreamParseJson: topic:dev-syn-table-reportcontent
+17/07/10 15:53:13 INFO StreamParseJson: groupId:labelgen
+17/07/10 15:53:13 INFO StreamParseJson: offsets:Map(dev-syn-table-reportcontent-0 -> 1563737, dev-syn-table-reportcontent-1 -> 1563562)
+17/07/10 15:53:14 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/10 15:53:14 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/10 15:53:14 WARN KafkaUtils: overriding executor group.id to spark-executor-labelgen
+17/07/10 15:53:14 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/10 15:53:30 INFO StreamParseJson: has records
+17/07/10 15:53:34 INFO ParseReport: 将解析完的报告存入ES中
+17/07/10 15:53:39 INFO ParseReport: 将数据保存到HBase的dataetl:report_label中
+17/07/10 15:53:42 INFO ParseReport: 将数据保存到HBase的dataetl:report_index中
+17/07/10 15:53:43 INFO ParseReport: 将数据保存到HBase的dataetl:report_summary中
+17/07/10 15:53:44 INFO ParseReport: 将数据保存到HBase的dataetl:report_suggest中
+17/07/10 15:53:45 INFO ParseReport: 4条数据
+17/07/10 15:53:45 INFO DataSource: 初始化c3p0连接池
+17/07/10 15:53:46 INFO ReportDAO: Mysql insertOrUpdate 4 REPORT:
+17/07/10 15:53:46 INFO ParseReport: 将4条report保存到Mysql中完成
+17/07/10 15:53:46 INFO ParseReport: 将数据保存到HBase的dataetl:reports中
+17/07/10 15:53:46 INFO StreamParseJson: 第1批次完成
+17/07/10 16:57:39 INFO ScalaUtils$: 加载本地目录下的文件:/data/work/luciuschina/data-etl/label-gen/target/classes/config.properties
+17/07/10 16:57:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/10 16:57:43 WARN Utils: Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 192.168.31.11 instead (on interface eno16777736)
+17/07/10 16:57:43 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/07/10 16:57:53 INFO StreamParseJson: topic:dev-syn-table-reportcontent
+17/07/10 16:57:53 INFO StreamParseJson: groupId:labelgen
+17/07/10 16:57:53 INFO StreamParseJson: offsets:Map(dev-syn-table-reportcontent-0 -> 1563737, dev-syn-table-reportcontent-1 -> 1563564)
+17/07/10 16:57:53 WARN KafkaUtils: overriding enable.auto.commit to false for executor
+17/07/10 16:57:53 WARN KafkaUtils: overriding auto.offset.reset to none for executor
+17/07/10 16:57:53 WARN KafkaUtils: overriding executor group.id to spark-executor-labelgen
+17/07/10 16:57:53 WARN KafkaUtils: overriding receive.buffer.bytes to 65536 see KAFKA-3135
+17/07/10 16:58:00 INFO StreamParseJson: has records
+17/07/10 16:58:05 INFO ParseReport: 将解析完的报告存入ES中
+17/07/10 16:58:10 ERROR StreamParseJson: 解析报告出错了
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:998)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait(Promise.scala:202)
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:218)
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:153)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:619)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1925)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1938)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1958)
+	at org.elasticsearch.spark.rdd.EsSpark$.doSaveToEs(EsSpark.scala:102)
+	at org.elasticsearch.spark.rdd.EsSpark$.saveToEsWithMeta(EsSpark.scala:85)
+	at org.elasticsearch.spark.rdd.EsSpark$.saveToEsWithMeta(EsSpark.scala:80)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.ParseReport.labelsToES(ParseReport.scala:114)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.ParseReport.saveToEsHBase(ParseReport.scala:200)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.StreamParseJson$$anonfun$run$2.apply(StreamParseJson.scala:64)
+	at com.haozhuo.bigdata.dataetl.labelgen.spark.stream.StreamParseJson$$anonfun$run$2.apply(StreamParseJson.scala:52)
+	at org.apache.spark.streaming.dstream.DStream$$anonfun$foreachRDD$1$$anonfun$apply$mcV$sp$3.apply(DStream.scala:627)
+	at org.apache.spark.streaming.dstream.DStream$$anonfun$foreachRDD$1$$anonfun$apply$mcV$sp$3.apply(DStream.scala:627)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ForEachDStream.scala:51)
+	at org.apache.spark.streaming.dstream.DStream.createRDDWithLocalProperties(DStream.scala:415)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply$mcV$sp(ForEachDStream.scala:50)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply(ForEachDStream.scala:50)
+	at org.apache.spark.streaming.dstream.ForEachDStream$$anonfun$1.apply(ForEachDStream.scala:50)
+	at scala.util.Try$.apply(Try.scala:192)
+	at org.apache.spark.streaming.scheduler.Job.run(Job.scala:39)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply$mcV$sp(JobScheduler.scala:256)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply(JobScheduler.scala:256)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler$$anonfun$run$1.apply(JobScheduler.scala:256)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.streaming.scheduler.JobScheduler$JobHandler.run(JobScheduler.scala:255)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+17/07/10 16:58:10 INFO StreamParseJson: 第1批次完成
+17/07/10 16:58:10 ERROR LiveListenerBus: SparkListenerBus has already stopped! Dropping event SparkListenerStageCompleted(org.apache.spark.scheduler.StageInfo@787c4b25)
+17/07/10 16:58:10 ERROR LiveListenerBus: SparkListenerBus has already stopped! Dropping event SparkListenerJobEnd(3,1499677090918,JobFailed(org.apache.spark.SparkException: Job 3 cancelled because SparkContext was shut down))
+17/07/10 16:58:11 ERROR TaskSchedulerImpl: Exception in statusUpdate
+java.util.concurrent.RejectedExecutionException: Task org.apache.spark.scheduler.TaskResultGetter$$anon$3@43b46158 rejected from java.util.concurrent.ThreadPoolExecutor@5b50fe79[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 27]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1369)
+	at org.apache.spark.scheduler.TaskResultGetter.enqueueSuccessfulTask(TaskResultGetter.scala:61)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.liftedTree2$1(TaskSchedulerImpl.scala:372)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.statusUpdate(TaskSchedulerImpl.scala:353)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$receive$1.applyOrElse(LocalSchedulerBackend.scala:67)
+	at org.apache.spark.rpc.netty.Inbox$$anonfun$process$1.apply$mcV$sp(Inbox.scala:117)
+	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:205)
+	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:101)
+	at org.apache.spark.rpc.netty.Dispatcher$MessageLoop.run(Dispatcher.scala:213)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+17/07/10 16:58:11 ERROR TaskSchedulerImpl: Exception in statusUpdate
+java.util.concurrent.RejectedExecutionException: Task org.apache.spark.scheduler.TaskResultGetter$$anon$3@1a532c8e rejected from java.util.concurrent.ThreadPoolExecutor@5b50fe79[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 27]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1369)
+	at org.apache.spark.scheduler.TaskResultGetter.enqueueSuccessfulTask(TaskResultGetter.scala:61)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.liftedTree2$1(TaskSchedulerImpl.scala:372)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.statusUpdate(TaskSchedulerImpl.scala:353)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$receive$1.applyOrElse(LocalSchedulerBackend.scala:67)
+	at org.apache.spark.rpc.netty.Inbox$$anonfun$process$1.apply$mcV$sp(Inbox.scala:117)
+	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:205)
+	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:101)
+	at org.apache.spark.rpc.netty.Dispatcher$MessageLoop.run(Dispatcher.scala:213)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+17/07/10 16:58:11 ERROR TaskSchedulerImpl: Exception in statusUpdate
+java.util.concurrent.RejectedExecutionException: Task org.apache.spark.scheduler.TaskResultGetter$$anon$3@3f506f73 rejected from java.util.concurrent.ThreadPoolExecutor@5b50fe79[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 27]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1369)
+	at org.apache.spark.scheduler.TaskResultGetter.enqueueSuccessfulTask(TaskResultGetter.scala:61)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.liftedTree2$1(TaskSchedulerImpl.scala:372)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.statusUpdate(TaskSchedulerImpl.scala:353)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$receive$1.applyOrElse(LocalSchedulerBackend.scala:67)
+	at org.apache.spark.rpc.netty.Inbox$$anonfun$process$1.apply$mcV$sp(Inbox.scala:117)
+	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:205)
+	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:101)
+	at org.apache.spark.rpc.netty.Dispatcher$MessageLoop.run(Dispatcher.scala:213)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
